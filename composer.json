@@ -1,0 +1,16 @@
+{
+  "name": "chapi/rank-math",
+  "description": "rank math plugin for showing stat on the admin dashboard",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {"Inc\\": "./inc"}
+  },
+  "authors": [
+    {
+      "name": "aronikakume",
+      "email": "mebratu@addissoftware.com"
+    }
+  ],
+  "require": {}
+}
