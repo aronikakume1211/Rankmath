@@ -37,3 +37,47 @@ You should have received a copy of the GNU General
 
 // If this file is called directly, abort.
 defined('ABSPATH') or die('No script kiddies please!');
+
+// Require once the Composer Autoload
+if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
+	require_once dirname(__FILE__) . '/vendor/autoload.php';
+}
+
+use Inc\Base\Activate;
+use Inc\Base\Deactivate;
+
+/**
+ * The code that runs during plugin activation
+ * 
+ */
+
+function activate_rank_math_stat()
+{
+	Activate::activate();
+	Activate::create_table();
+	Activate::insert_data();
+}
+
+/**
+ * The code that runs during plugin deactivation
+ * 
+ */
+
+function deactivate_rank_math_stat()
+{
+	Deactivate::deactivate();
+}
+
+
+register_activation_hook(__FILE__, 'activate_rank_math_stat');
+register_deactivation_hook(__FILE__, 'deactivate_rank_math_stat');
+
+/**
+ * Initialize all the core classes of the plugin
+ * 
+ */
+
+
+if (class_exists('Inc\\Init')) {
+	Inc\Init::register_services();
+}
