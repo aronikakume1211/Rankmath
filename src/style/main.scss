@@ -1,0 +1,24 @@
+#rankmath{
+    h2{
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+}
+
+.chart-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    & select{
+        width: 35%;
+        height: 40px;
+        border-radius: 20px;
+    }
+}
+.recharts-surface{
+    width: 100% !important;
+}
+.recharts-wrapper{
+    width: 100% !important;
+}
