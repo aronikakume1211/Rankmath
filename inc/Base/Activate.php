@@ -44,40 +44,40 @@ class Activate
         $data = [
             [
                 "name" => __("test1", "rank-math"),
-                "price" => __("10", "rank-math"),
+                "price" => __("5", "rank-math"),
                 "date" => __("2024-01-25T19:30:33", "rank-math")
 
             ],
             [
                 "name" => __("test2", "rank-math"),
-                "price" => __("40", "rank-math"),
+                "price" => __("4", "rank-math"),
                 "date" => __("2024-01-24T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test3", "rank-math"),
-                "price" => __("13", "rank-math"),
-                "date" => __("2024-01-16T19:30:33", "rank-math")
+                "price" => __("3", "rank-math"),
+                "date" => __("2024-01-26T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test4", "rank-math"),
-                "price" => __("24", "rank-math"),
-                "date" => __("2024-01-15T19:30:33", "rank-math")
+                "price" => __("2", "rank-math"),
+                "date" => __("2024-01-25T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test5", "rank-math"),
                 "price" => __("7", "rank-math"),
-                "date" => __("2024-02-11T19:30:33", "rank-math")
+                "date" => __("2024-02-16T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test6", "rank-math"),
                 "price" => __("5", "rank-math"),
-                "date" => __("2024-02-10T19:30:33", "rank-math")
+                "date" => __("2024-02-15T19:30:33", "rank-math")
 
             ],
             [
                 "name" => __("test7", "rank-math"),
-                "price" => __("10", "rank-math"),
-                "date" => __("2024-02-6T19:30:33", "rank-math")
+                "price" => __("7", "rank-math"),
+                "date" => __("2024-02-14T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test8", "rank-math"),
@@ -86,13 +86,13 @@ class Activate
             ],
             [
                 "name" => __("test9", "rank-math"),
-                "price" => __("44", "rank-math"),
-                "date" => __("2024-01-8T19:30:33", "rank-math")
+                "price" => __("1", "rank-math"),
+                "date" => __("2024-01-28T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test10", "rank-math"),
-                "price" => __("65", "rank-math"),
-                "date" => __("2024-01-7T19:30:33", "rank-math")
+                "price" => __("6", "rank-math"),
+                "date" => __("2024-01-27T19:30:33", "rank-math")
             ]
         ];
         global $wpdb;
