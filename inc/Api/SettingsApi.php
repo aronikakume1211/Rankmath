@@ -33,9 +33,13 @@ class SettingsApi
             register_rest_route('rankmath/v1', '/employees', array(
                 'methods'             => 'GET',
                 'callback'            => array($this->callbacks, 'get_employees'),
+                'args'                => array(
+                    'days' => array(
+                        'default' => 7, // Default to last 7 days
+                    ),
+                ),
             ));
         });
         return $this;
     }
-
 }

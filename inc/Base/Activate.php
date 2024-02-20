@@ -45,13 +45,13 @@ class Activate
             [
                 "name" => __("test1", "rank-math"),
                 "price" => __("5", "rank-math"),
-                "date" => __("2024-01-25T19:30:33", "rank-math")
+                "date" => __("2024-02-11T19:30:33", "rank-math")
 
             ],
             [
                 "name" => __("test2", "rank-math"),
                 "price" => __("4", "rank-math"),
-                "date" => __("2024-01-24T19:30:33", "rank-math")
+                "date" => __("2024-02-17T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test3", "rank-math"),
@@ -71,7 +71,7 @@ class Activate
             [
                 "name" => __("test6", "rank-math"),
                 "price" => __("5", "rank-math"),
-                "date" => __("2024-02-15T19:30:33", "rank-math")
+                "date" => __("2024-02-18T19:30:33", "rank-math")
 
             ],
             [
@@ -82,12 +82,12 @@ class Activate
             [
                 "name" => __("test8", "rank-math"),
                 "price" => __("3", "rank-math"),
-                "date" => __("2024-02-9T19:30:33", "rank-math")
+                "date" => __("2024-02-19T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test9", "rank-math"),
                 "price" => __("1", "rank-math"),
-                "date" => __("2024-01-28T19:30:33", "rank-math")
+                "date" => __("2024-02-12T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test10", "rank-math"),

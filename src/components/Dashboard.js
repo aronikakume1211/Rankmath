@@ -16,38 +16,23 @@ const Dashboard = () => {
   const [posts, setPosts] = useState([]);
   const [value, setValue] = useState(7); // default value is 7 days
   const { t } = useTranslation(); // get the i18n instance
-  let url = `${window.location.origin}/wp-json/rankmath/v1/employees`;
+  let url = `${window.location.origin}/wp-json/rankmath/v1/employees/`;
   let results;
 
-  const getPosts = async () => {
-    const { data } = await axios.get(url); // axios call and destructure the data
+  const getPosts = async (days) => {
+    const { data } = await axios.get(`${url}/?days=${days}`); // axios call and destructure the data
     setPosts(data);
   };
 
   useEffect(() => {
-    getPosts();
+    getPosts(7);
   }, []);
-
-  //   Filter the data by the selected value
-  const fiteredData = () => {
-    results = posts
-      .filter((post) => {
-        return (
-          new Date(post.activedate).getTime() > new Date().getTime() - value * 24 * 60 * 60 * 1000
-        );
-      })
-      .map((post) => {
-        return post;
-      });
-  };
-
-  //   init fun call
-  fiteredData();
 
   const handleChange = (e) => {
     let lastDays = parseInt(e.target.value);
     setValue(lastDays);
-    fiteredData(); // re-filter the data by the selected value
+    getPosts(lastDays);
+    // fiteredData(); // re-filter the data by the selected value
   };
   return (
     <I18nextProvider i18n={i18n}>
@@ -68,7 +53,7 @@ const Dashboard = () => {
       <LineChart
         width={400}
         height={300}
-        data={results != '' ? results : posts}
+        data={posts}
         margin={{ top: 5, right: 10, left: -30, bottom: 5 }}
       >
         <Line type="monotone" dataKey="price" stroke="#8884d8" />
