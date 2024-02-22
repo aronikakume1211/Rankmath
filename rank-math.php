@@ -78,6 +78,6 @@ register_deactivation_hook(__FILE__, 'deactivate_rank_math_stat');
  */
 
 
-if (class_exists('Inc\\Init')) {
-	Inc\Init::register_services();
+if (class_exists('Inc\\init')) {
+	Inc\init::register_services();
 }

@@ -6,7 +6,7 @@
 
 namespace Inc;
 
-final class Init
+final class init
 {
     /**
      * Initialize the classes
