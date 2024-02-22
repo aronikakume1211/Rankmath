@@ -22,7 +22,7 @@ class Enqueue extends BaseController
             $screen = get_current_screen();
             if (isset($screen->base) && 'dashboard' === $screen->base) {
                 wp_enqueue_style('rankmath-style', $this->plugin_url . 'build/index.css');
-                wp_enqueue_script('rankmath-script', $this->plugin_url . 'build/index.js', ['wp-element'], '1.0.0', true);
+                wp_enqueue_script('rankmath-script', $this->plugin_url . 'build/index.js', ['wp-element','wp-api-fetch','wp-components'], '1.0.0', true);
             }
         }
     }

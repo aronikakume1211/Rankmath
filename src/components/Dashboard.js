@@ -1,8 +1,4 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { I18nextProvider } from "react-i18next";
-import i18n from "./i18n";
-import { useTranslation } from "react-i18next";
 import {
   CartesianGrid,
   Line,
@@ -11,43 +7,49 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import apiFetch from "@wordpress/api-fetch";
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const Dashboard = () => {
   const [posts, setPosts] = useState([]);
   const [value, setValue] = useState(7); // default value is 7 days
-  const { t } = useTranslation(); // get the i18n instance
-  let url = `${window.location.origin}/wp-json/rankmath/v1/employees/`;
-  let results;
+
 
   const getPosts = async (days) => {
-    const { data } = await axios.get(`${url}/?days=${days}`); // axios call and destructure the data
-    setPosts(data);
+    try {
+      await apiFetch({ path: `/rankmath/v1/employees/?days=${days}` }).then(res => {
+        setPosts(res);
+      });
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
   };
+
+
 
   useEffect(() => {
     getPosts(7);
   }, []);
 
-  const handleChange = (e) => {
-    let lastDays = parseInt(e.target.value);
-    setValue(lastDays);
-    getPosts(lastDays);
-    // fiteredData(); // re-filter the data by the selected value
+  const handleChange = (newValue) => {
+    setValue(newValue);
+    getPosts(newValue);
   };
   return (
-    <I18nextProvider i18n={i18n}>
+    <div>
       <div className="chart-header">
-        <h2> {t('graphWidget')}</h2>
-        <select
-          name="rankmath_widget"
-          id="rankmath_widget"
-          onChange={handleChange}
+        <h2>{__('Graph Widget', 'rank-math')}</h2>
+
+        <SelectControl
           value={value}
-        >
-          <option value="7">{t('last7days')} </option>
-          <option value="15">{t('last15days')} </option>
-          <option value="30">{t('last30days')} </option>
-        </select>
+          onChange={handleChange}
+          options={[
+            { label: __('Last 7 days', 'rank-math'), value: '7' },
+            { label: __('Last 15 days', 'rank-math'), value: '15' },
+            { label: __('Last 30 days', 'rank-math'), value: '30' },
+          ]}
+        />
       </div>
       <hr />
       <LineChart
@@ -62,7 +64,7 @@ const Dashboard = () => {
         <YAxis />
         <Tooltip />
       </LineChart>
-    </I18nextProvider>
+    </div>
   );
 };
 

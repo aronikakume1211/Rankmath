@@ -1,9 +1,10 @@
-const defaults= require('@wordpress/scripts/config/webpack.config');
+const defaults = require('@wordpress/scripts/config/webpack.config');
 
 module.exports = {
     ...defaults,
-    externals:{
+    externals: {
         react: 'React',
         'react-dom': 'ReactDOM',
+        wp: 'wp', // Specify 'wp' as an external dependency
     }
 }
