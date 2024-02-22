@@ -33,6 +33,7 @@ class SettingsApi
             register_rest_route('rankmath/v1', '/employees', array(
                 'methods'             => 'GET',
                 'callback'            => array($this->callbacks, 'get_employees'),
+                'permission_callback' => array($this, 'check_user_access'),
                 'args'                => array(
                     'days' => array(
                         'default' => 7, // Default to last 7 days
@@ -41,5 +42,13 @@ class SettingsApi
             ));
         });
         return $this;
+    }
+
+    // check if user can access the dashboard
+    public function check_user_access()
+    {
+        if (current_user_can('manage_options')) {
+            return true;
+        }
     }
 }

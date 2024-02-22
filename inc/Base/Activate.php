@@ -56,12 +56,12 @@ class Activate
             [
                 "name" => __("test3", "rank-math"),
                 "price" => __("3", "rank-math"),
-                "date" => __("2024-01-26T19:30:33", "rank-math")
+                "date" => __("2024-02-19T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test4", "rank-math"),
                 "price" => __("2", "rank-math"),
-                "date" => __("2024-01-25T19:30:33", "rank-math")
+                "date" => __("2024-02-15T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test5", "rank-math"),
@@ -77,22 +77,22 @@ class Activate
             [
                 "name" => __("test7", "rank-math"),
                 "price" => __("7", "rank-math"),
-                "date" => __("2024-02-14T19:30:33", "rank-math")
+                "date" => __("2024-02-5T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test8", "rank-math"),
                 "price" => __("3", "rank-math"),
-                "date" => __("2024-02-19T19:30:33", "rank-math")
+                "date" => __("2024-02-1T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test9", "rank-math"),
                 "price" => __("1", "rank-math"),
-                "date" => __("2024-02-12T19:30:33", "rank-math")
+                "date" => __("2024-02-20T19:30:33", "rank-math")
             ],
             [
                 "name" => __("test10", "rank-math"),
                 "price" => __("6", "rank-math"),
-                "date" => __("2024-01-27T19:30:33", "rank-math")
+                "date" => __("2024-02-21T19:30:33", "rank-math")
             ]
         ];
         global $wpdb;

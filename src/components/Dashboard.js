@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "@wordpress/element";
 import {
   CartesianGrid,
   Line,
@@ -7,27 +7,23 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import apiFetch from "@wordpress/api-fetch";
-import { SelectControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import apiFetch  from "@wordpress/api-fetch";
+import { SelectControl } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
 
 const Dashboard = () => {
   const [posts, setPosts] = useState([]);
   const [value, setValue] = useState(7); // default value is 7 days
 
-
   const getPosts = async (days) => {
     try {
-      await apiFetch({ path: `/rankmath/v1/employees/?days=${days}` }).then(res => {
-        setPosts(res);
-      });
+      const res = await apiFetch({ path: `/rankmath/v1/employees/?days=${days}` });
+      setPosts(res);
     } catch (error) {
-      console.error('Error fetching posts:', error);
+      console.error("Error fetching posts:", error);
     }
   };
-
-
-
+ 
   useEffect(() => {
     getPosts(7);
   }, []);
@@ -36,18 +32,19 @@ const Dashboard = () => {
     setValue(newValue);
     getPosts(newValue);
   };
+
   return (
     <div>
       <div className="chart-header">
-        <h2>{__('Graph Widget', 'rank-math')}</h2>
+        <h2>{__("Graph Widget", "rank-math")}</h2>
 
         <SelectControl
           value={value}
           onChange={handleChange}
           options={[
-            { label: __('Last 7 days', 'rank-math'), value: '7' },
-            { label: __('Last 15 days', 'rank-math'), value: '15' },
-            { label: __('Last 30 days', 'rank-math'), value: '30' },
+            { label: __("Last 7 days", "rank-math"), value: "7" },
+            { label: __("Last 15 days", "rank-math"), value: "15" },
+            { label: __("Last 30 days", "rank-math"), value: "30" },
           ]}
         />
       </div>
